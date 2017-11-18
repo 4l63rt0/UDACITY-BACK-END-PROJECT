@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="main_content_RS">
+
+{% if appsValue %}
+  <div>
+    <h1> Create first App for {{department.name}} Department</h1>
+  </div>
+{% else %}
+  <div>
+    <h1> Create New App for {{department.name}} Department</h1><br>
+  </div>
+{% endif %}
+
+<form action="{{url_for('newApp', department_id = department_id)}}" method = 'POST'>
+<a class="dep_name">Name:</a><br>
+<input type='text' size='25' name='name' placeholder='New App Name' autofocus></br></br>
+<input type='submit' value='Create'>
+<a class="dep_link" href='{{url_for('departmentApps', department_id = department_id)}}'>Cancel</a>
+</form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="main_content_RS">
+<h1> Edit {{editDep.name}} Department</h1><br>
+
+<form action="{{url_for('editDepartment', department_id=department_id)}}" method = 'POST'>
+
+<a class="dep_name">Name:</a><br>
+<input type='text' size='30' name='name' placeholder='{{editDep.name}}' autofocus></br>
+</br>
+
+<input type='submit' value='Update'>
+
+<a class="dep_link" href='{{url_for('departments')}}'>Cancel</a>
+
+</form>
+
+</div>
+{% endblock %}

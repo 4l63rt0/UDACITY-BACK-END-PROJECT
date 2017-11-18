@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="main_content_RS">
+<h1>Apps</h1><br><br>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<ul>
+{% for message in messages %}
+  <li><strong>{{message}}</strong></li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+
+{% for i in apps %}
+
+<div>
+<a class="dep_link" href='{{url_for('departmentAppsDesc', department_id = department.id, application_id = i.id)}}'>{{i.name}}</a>
+</div>
+</br>
+{% endfor %}
+<a class="dep_link" href = "{{ url_for('departments')}}">Go back</a>
+</div>
+{% endblock %}

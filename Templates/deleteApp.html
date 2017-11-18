@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="main_content_RS">
+<h1> Are you sure you want to delete {{i.name}} App? </h1></br>
+
+<form action="{{ url_for('deleteApp', department_id=department_id, application_id=application_id)}}" method = 'post'>
+
+<input type='submit', value = 'Delete Item'>
+
+</form>
+
+</br>
+<a class="dep_link" href = "{{ url_for('departmentApps', department_id = department_id)}}">Cancel</a>
+
+</div>
+{% endblock %}

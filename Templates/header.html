@@ -1,0 +1,49 @@
+<header>
+  <div class="header_info">
+    <div class="logo_and_name">
+      <div class="logo">
+        <img src="{{ url_for('static', filename='anon5.png') }}" alt="KS Logo" style="width:120px;height:120px">
+      </div>
+      <div class="app_name">
+        <p>
+          System Apps
+        </p>
+      </div>
+    </div>
+    <div class='session_info'>
+      <div class="picture">
+        {%if 'username' not in session %}
+          <div></div>
+        {% else %}
+          <img src="{{userPicture}}" alt="user_picture" style="width:50px;height:50px">
+        {% endif %}
+      </div>
+      <div class="login_out">
+        {%if 'username' not in session %}
+          <p><a class="dep_link" href="{{url_for('showLogin')}}">Click Here to Login </a></p>
+        {% else %}
+          <p><a class="special_header_text" href="{{url_for('disconnect')}}">Logout </a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="divider_height"></div>
+  <nav class="top_nav_info">
+    <div class="nav_apps">
+      <a href="/department/1/App/1/" class="nav_p special_header_text">GPS</a>
+    </div>
+    <div class="nav_apps">
+      <a href="/department/1/App/2/" class="nav_p special_header_text">Badge</a>
+    </div>
+    <div class="nav_apps">
+      <a href="/department/1/App/6/" class="nav_p special_header_text">Truck</a>
+    </div>
+    <div class="nav_apps">
+      <a href="/department/1/App/7/" class="nav_p special_header_text">Chemical</a>
+    </div>
+    <div class="nav_apps">
+      <a href="/department/1/App/8/" class="nav_p special_header_text">B.Display</a>
+    </div>
+  </nav>
+  <div class="divider_height"></div>
+</header>
